@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+.streamlit/
+.env
+*.db
+.DS_Store
+
+# Kiro workspace files (don't commit)
+.kiro/
+
+# Internal docs (for your use only)
+DEPLOYMENT.md
+SUBMISSION_SUMMARY.md
+STUDY_GUIDE.md
+GO_LIVE_INSTRUCTIONS.md
+SUBMISSION_CHECKLIST.md
+
+# Old project structure (not needed)
+bus-charging-scheduler/
