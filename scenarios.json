@@ -1,0 +1,167 @@
+{
+  "scenario_1": {
+    "name": "Scenario 1 - Even Spacing",
+    "buses": [
+      {"id": "bus-BK-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-02", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "19:15", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-03", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "19:30", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-01", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-02", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "19:15", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-03", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "19:30", "battery_range": 240, "priority": 5}
+    ],
+    "route": {
+      "name": "Bengaluru-Kochi",
+      "endpoints": {"start": "Bengaluru", "end": "Kochi"},
+      "segments": [
+        {"from": "Bengaluru", "to": "A", "distance": 100, "order": 0},
+        {"from": "A", "to": "B", "distance": 120, "order": 1},
+        {"from": "B", "to": "C", "distance": 100, "order": 2},
+        {"from": "C", "to": "D", "distance": 120, "order": 3},
+        {"from": "D", "to": "Kochi", "distance": 100, "order": 4}
+      ]
+    },
+    "stations": [
+      {"id": "A", "name": "Station A", "location": "100km from Bengaluru", "chargers": 1},
+      {"id": "B", "name": "Station B", "location": "220km from Bengaluru", "chargers": 1},
+      {"id": "C", "name": "Station C", "location": "320km from Bengaluru", "chargers": 1},
+      {"id": "D", "name": "Station D", "location": "440km from Bengaluru", "chargers": 1}
+    ],
+    "weights": {
+      "individual": 1.0,
+      "operator": 1.0,
+      "overall": 1.0
+    }
+  },
+  "scenario_2": {
+    "name": "Scenario 2 - Bunched Start",
+    "buses": [
+      {"id": "bus-BK-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-02", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "19:08", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-03", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "19:16", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-01", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-02", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "19:08", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-03", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "19:16", "battery_range": 240, "priority": 5}
+    ],
+    "route": {
+      "name": "Bengaluru-Kochi",
+      "endpoints": {"start": "Bengaluru", "end": "Kochi"},
+      "segments": [
+        {"from": "Bengaluru", "to": "A", "distance": 100, "order": 0},
+        {"from": "A", "to": "B", "distance": 120, "order": 1},
+        {"from": "B", "to": "C", "distance": 100, "order": 2},
+        {"from": "C", "to": "D", "distance": 120, "order": 3},
+        {"from": "D", "to": "Kochi", "distance": 100, "order": 4}
+      ]
+    },
+    "stations": [
+      {"id": "A", "name": "Station A", "location": "100km from Bengaluru", "chargers": 1},
+      {"id": "B", "name": "Station B", "location": "220km from Bengaluru", "chargers": 1},
+      {"id": "C", "name": "Station C", "location": "320km from Bengaluru", "chargers": 1},
+      {"id": "D", "name": "Station D", "location": "440km from Bengaluru", "chargers": 1}
+    ],
+    "weights": {
+      "individual": 1.0,
+      "operator": 1.0,
+      "overall": 1.0
+    }
+  },
+  "scenario_3": {
+    "name": "Scenario 3 - Asymmetric Load",
+    "buses": [
+      {"id": "bus-BK-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-02", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "19:15", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-03", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "19:30", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-01", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-02", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "19:35", "battery_range": 240, "priority": 5}
+    ],
+    "route": {
+      "name": "Bengaluru-Kochi",
+      "endpoints": {"start": "Bengaluru", "end": "Kochi"},
+      "segments": [
+        {"from": "Bengaluru", "to": "A", "distance": 100, "order": 0},
+        {"from": "A", "to": "B", "distance": 120, "order": 1},
+        {"from": "B", "to": "C", "distance": 100, "order": 2},
+        {"from": "C", "to": "D", "distance": 120, "order": 3},
+        {"from": "D", "to": "Kochi", "distance": 100, "order": 4}
+      ]
+    },
+    "stations": [
+      {"id": "A", "name": "Station A", "location": "100km from Bengaluru", "chargers": 1},
+      {"id": "B", "name": "Station B", "location": "220km from Bengaluru", "chargers": 1},
+      {"id": "C", "name": "Station C", "location": "320km from Bengaluru", "chargers": 1},
+      {"id": "D", "name": "Station D", "location": "440km from Bengaluru", "chargers": 1}
+    ],
+    "weights": {
+      "individual": 1.0,
+      "operator": 1.0,
+      "overall": 1.0
+    }
+  },
+  "scenario_4": {
+    "name": "Scenario 4 - Operator Heavy",
+    "buses": [
+      {"id": "bus-BK-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-02", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:15", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-03", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:30", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-04", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "19:45", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-01", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-02", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "19:15", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-03", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "19:30", "battery_range": 240, "priority": 5}
+    ],
+    "route": {
+      "name": "Bengaluru-Kochi",
+      "endpoints": {"start": "Bengaluru", "end": "Kochi"},
+      "segments": [
+        {"from": "Bengaluru", "to": "A", "distance": 100, "order": 0},
+        {"from": "A", "to": "B", "distance": 120, "order": 1},
+        {"from": "B", "to": "C", "distance": 100, "order": 2},
+        {"from": "C", "to": "D", "distance": 120, "order": 3},
+        {"from": "D", "to": "Kochi", "distance": 100, "order": 4}
+      ]
+    },
+    "stations": [
+      {"id": "A", "name": "Station A", "location": "100km from Bengaluru", "chargers": 1},
+      {"id": "B", "name": "Station B", "location": "220km from Bengaluru", "chargers": 1},
+      {"id": "C", "name": "Station C", "location": "320km from Bengaluru", "chargers": 1},
+      {"id": "D", "name": "Station D", "location": "440km from Bengaluru", "chargers": 1}
+    ],
+    "weights": {
+      "individual": 1.0,
+      "operator": 2.0,
+      "overall": 1.0
+    }
+  },
+  "scenario_5": {
+    "name": "Scenario 5 - Worst Case Convergence",
+    "buses": [
+      {"id": "bus-BK-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-02", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "19:08", "battery_range": 240, "priority": 5},
+      {"id": "bus-BK-03", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "19:16", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-01", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "19:00", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-02", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "19:08", "battery_range": 240, "priority": 5},
+      {"id": "bus-KB-03", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "19:16", "battery_range": 240, "priority": 5}
+    ],
+    "route": {
+      "name": "Bengaluru-Kochi",
+      "endpoints": {"start": "Bengaluru", "end": "Kochi"},
+      "segments": [
+        {"from": "Bengaluru", "to": "A", "distance": 100, "order": 0},
+        {"from": "A", "to": "B", "distance": 120, "order": 1},
+        {"from": "B", "to": "C", "distance": 100, "order": 2},
+        {"from": "C", "to": "D", "distance": 120, "order": 3},
+        {"from": "D", "to": "Kochi", "distance": 100, "order": 4}
+      ]
+    },
+    "stations": [
+      {"id": "A", "name": "Station A", "location": "100km from Bengaluru", "chargers": 1},
+      {"id": "B", "name": "Station B", "location": "220km from Bengaluru", "chargers": 1},
+      {"id": "C", "name": "Station C", "location": "320km from Bengaluru", "chargers": 1},
+      {"id": "D", "name": "Station D", "location": "440km from Bengaluru", "chargers": 1}
+    ],
+    "weights": {
+      "individual": 1.0,
+      "operator": 1.0,
+      "overall": 1.0
+    }
+  }
+}
