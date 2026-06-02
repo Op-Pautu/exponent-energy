@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exponent-energy"
+version = "1.0.0"
+description = "Bus Charging Scheduler for electric buses"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "streamlit==1.35.0"
+]
